@@ -13,7 +13,7 @@ module.exports = (grunt) =>
         open:
             server:
                 path: 'http://localhost:<%= appSettings.port %>'
-                app: 'chrome.exe'
+                app: 'firefox'
         watch:
             options:
                 livereload: true
