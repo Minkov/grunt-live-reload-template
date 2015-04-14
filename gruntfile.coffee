@@ -23,4 +23,5 @@ module.exports = (grunt) =>
 				files: 'app/**/*.css'
 			scripts:
 				files: 'app/**/*.js'
-	grunt.registerTask 'default', ['connect', 'open', 'watch']
+	grunt.registerTask 'serve', ['connect', 'open', 'watch']
+	grunt.registerTask 'default', ['serve']
