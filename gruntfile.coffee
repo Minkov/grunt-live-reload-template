@@ -14,14 +14,23 @@ module.exports = (grunt) =>
             server:
                 path: 'http://localhost:<%= appSettings.port %>'
                 app: 'firefox'
+        stylus:
+            options:
+                compress: false
+            compile:
+                files:
+                    'app/css/main.css': 'app/**/*.styl'
         watch:
             options:
                 livereload: true
             html:
                 files: 'app/**/*.html'
+            styl:
+                files: 'app/**/*.styl'
+                tasks: 'stylus'
             css: 
                 files: 'app/**/*.css'
             scripts:
                 files: 'app/**/*.js'
-    grunt.registerTask 'serve', ['connect', 'open', 'watch']
+    grunt.registerTask 'serve', ['stylus', 'connect', 'open', 'watch']
     grunt.registerTask 'default', ['serve']
